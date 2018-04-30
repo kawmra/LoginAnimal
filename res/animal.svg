@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="300"
+   viewBox="0 0 300.00001 300.00001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="animal.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.923306"
+     inkscape:cx="192.61755"
+     inkscape:cy="138.82346"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1676"
+     inkscape:window-height="1005"
+     inkscape:window-x="4"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="ears"
+     style="display:inline"
+     transform="translate(0,-752.36208)">
+    <circle
+       cy="821.99524"
+       cx="255.48172"
+       id="circle4154"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.04027176;stroke-opacity:1"
+       r="43.498142" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.04027176;stroke-opacity:1"
+       id="path4152"
+       cx="44.51828"
+       cy="823.50214"
+       r="43.498142"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="head"
+     style="display:inline"
+     transform="translate(0,-752.36208)">
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.6374197;stroke-opacity:1"
+       id="path3338"
+       cx="152.26031"
+       cy="917.17993"
+       r="134.36362"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:label="nose &amp; mouth"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     transform="translate(0,-752.36208)">
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.6374197;stroke-opacity:1"
+       id="path4144"
+       cx="146.23277"
+       cy="952.34045"
+       rx="75.59523"
+       ry="59.019535"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.6374197;stroke-opacity:1"
+       id="path4148"
+       cx="146.23277"
+       cy="922.45398"
+       rx="12.3062"
+       ry="9.0412903"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.6374197;stroke-opacity:1"
+       id="path4150"
+       cx="146.23277"
+       cy="976.19952"
+       rx="28.379606"
+       ry="21.598639"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="eyes"
+     style="display:inline"
+     transform="translate(0,-752.36208)">
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="path4140"
+       cx="91.231613"
+       cy="896.11432"
+       r="11.050466"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <circle
+       r="11.050466"
+       cy="896.11432"
+       cx="201.23395"
+       id="circle4142"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="hands"
+     style="display:none"
+     transform="translate(0,-752.36208)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 308.59996,636.70321 335.59479,517.3738 c 0,0 6.44195,-28.83539 24.234,-25.76779 17.79204,3.06759 23.00695,15.03121 19.93936,28.52862 -3.0676,13.49742 -28.22187,124.23756 -28.22187,124.23756"
+       id="path4163"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4165"
+       d="M 480.91691,635.16941 453.92208,515.84 c 0,0 -6.44195,-28.83539 -24.234,-25.76779 -17.79204,3.06759 -23.00695,15.03121 -19.93936,28.52862 3.0676,13.49742 28.22187,124.23756 28.22187,124.23756"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+</svg>
