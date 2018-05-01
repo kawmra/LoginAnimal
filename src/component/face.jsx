@@ -48,7 +48,6 @@ export default class Face extends React.Component {
   }
 
   render() {
-    console.log('render')
     const width = this.props.width
     const height = this.props.height
     const ratioX = this.props.ratioX

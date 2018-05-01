@@ -13,6 +13,26 @@ class App extends React.Component {
     }
   }
 
+  handleOnChange(e) {
+    console.log(e.target.value.length)
+    this.setState({
+      ratioX: e.target.value.length / 50.0,
+      ratioY: 0.9
+    })
+  }
+
+  handleOnFocus(e) {
+    this.setState({
+      ratioY: 0.9
+    })
+  }
+
+  handleOnBlur(e) {
+    this.setState({
+      ratioY: 0.5
+    })
+  }
+
   render() {
     const ear = new Parts('./res/ear.png', 90, 90)
     const head = new Parts('./res/head.png', 270, 270)
@@ -22,12 +42,11 @@ class App extends React.Component {
     const mouth = new Parts('./res/mouth.png', 58, 45)
 
     return (
-      <div style={{ width: 500, height: 500, position: 'relative' }} onMouseMove={(event) => {
-        const ratioX = event.clientX / 300.0
+      <div onMouseMove={(event) => {
+        // const ratioX = event.clientX / 300.0
         const ratioY = event.clientY / 300.0
-        console.log(ratioY)
         this.setState({
-          ratioX: ratioX,
+          // ratioX: ratioX,
           ratioY: ratioY,
         })
       }}>
@@ -42,6 +61,12 @@ class App extends React.Component {
           mouth={mouth}
           ratioX={this.state.ratioX}
           ratioY={this.state.ratioY} />
+
+        <input type="text"
+          style={{ width: 300, marginTop: 10 }}
+          onChange={this.handleOnChange.bind(this)}
+          onFocus={this.handleOnFocus.bind(this)}
+          onBlur={this.handleOnBlur.bind(this)} />
       </div>
     )
   }
