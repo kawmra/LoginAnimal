@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Face from './component/Face'
+import Face from './component/Animal'
 import Parts from './Parts'
 
 class App extends React.Component {
@@ -50,7 +50,7 @@ class App extends React.Component {
           ratioY: ratioY,
         })
       }}>
-        <Face
+        <Animal
           width="300"
           height="300"
           ear={ear}
