@@ -22,14 +22,13 @@ class App extends React.Component {
   }
 
   handleOnFocus(e) {
-    this.setState({
-      ratioY: 0.9
-    })
+    this.handleOnChange(e)
   }
 
   handleOnBlur(e) {
     this.setState({
-      ratioY: 0.5
+      ratioX: 0.5,
+      ratioY: 0.5,
     })
   }
 
