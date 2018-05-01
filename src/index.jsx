@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Face from './component/Animal'
+import Animal from './component/Animal'
 import Parts from './Parts'
 
 class App extends React.Component {

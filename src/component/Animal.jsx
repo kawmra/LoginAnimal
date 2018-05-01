@@ -18,7 +18,7 @@ class PartsPosition {
   }
 }
 
-export default class Face extends React.Component {
+export default class Animal extends React.Component {
 
   constructor(props) {
     super(props)
