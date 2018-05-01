@@ -22,29 +22,28 @@ export default class Face extends React.Component {
 
   constructor(props) {
     super(props)
-    this.leftEarPosition = new PartsPosition(0.15, 0.15, 0.15, 0.15)
-    this.rightEarPosition = new PartsPosition(0.85, 0.15, 0.85, 0.15)
-    this.headPosition = new PartsPosition(0.5, 0.5, 0.5, 0.5)
-    this.leftEyePosition = new PartsPosition(0.3, 0.5, 0.3, 0.5)
-    this.rightEyePosition = new PartsPosition(0.7, 0.5, 0.7, 0.5)
-    this.noseMouthBasePosition = new PartsPosition(0.5, 0.7, 0.5, 0.7)
-    this.nosePosition = new PartsPosition(0.5, 0.6, 0.5, 0.6)
-    this.mouthPosition = new PartsPosition(0.5, 0.75, 0.5, 0.75)
+    this.leftEarPosition = new PartsPosition(0.16, 0.16, 0.14, 0.14)
+    this.rightEarPosition = new PartsPosition(0.86, 0.16, 0.84, 0.14)
+    this.headPosition = new PartsPosition(0.49, 0.49, 0.51, 0.51)
+    this.leftEyePosition = new PartsPosition(0.2, 0.4, 0.4, 0.6)
+    this.rightEyePosition = new PartsPosition(0.6, 0.4, 0.8, 0.6)
+    this.noseMouthBasePosition = new PartsPosition(0.4, 0.6, 0.6, 0.8)
+    this.nosePosition = new PartsPosition(0.375, 0.475, 0.625, 0.725)
+    this.mouthPosition = new PartsPosition(0.375, 0.625, 0.625, 0.875)
   }
 
   /**
    * Return calculated position of the specified Parts.
    * 
-   * @param {Number} width 
-   * @param {Number} height 
-   * @param {Number} ratio 
+   * @param {Number} ratioX
+   * @param {Number} ratioY 
    * @param {Parts} parts 
    * @param {PartsPosition} partsPosition 
    */
-  calcPosition(ratio, parts, partsPosition) {
+  calcPosition(ratioX, ratioY, parts, partsPosition) {
     return {
-      top: this.props.height * partsPosition.y(0.5) - (parts.height / 2),
-      left: this.props.width * partsPosition.x(0.5) - (parts.width / 2)
+      top: this.props.height * partsPosition.y(ratioY) - (parts.height / 2),
+      left: this.props.width * partsPosition.x(ratioX) - (parts.width / 2)
     }
   }
 
@@ -52,16 +51,18 @@ export default class Face extends React.Component {
     console.log('render')
     const width = this.props.width
     const height = this.props.height
-    const leftEarStyle = this.calcPosition(0.5, this.props.ear, this.leftEarPosition)
-    const rightEarStyle = this.calcPosition(0.5, this.props.ear, this.rightEarPosition)
-    const headStyle = this.calcPosition(0.5, this.props.head, this.headPosition)
-    const leftEyeStyle = this.calcPosition(0.5, this.props.eye, this.leftEyePosition)
-    const rightEyeStyle = this.calcPosition(0.5, this.props.eye, this.rightEyePosition)
-    const noseMouthBaseStyle = this.calcPosition(0.5, this.props.noseMouthBase, this.noseMouthBasePosition)
-    const noseStyle = this.calcPosition(0.5, this.props.nose, this.nosePosition)
-    const mouthStyle = this.calcPosition(0.5, this.props.mouth, this.mouthPosition)
+    const ratioX = this.props.ratioX
+    const ratioY = this.props.ratioY
+    const leftEarStyle = this.calcPosition(ratioX, ratioY, this.props.ear, this.leftEarPosition)
+    const rightEarStyle = this.calcPosition(ratioX, ratioY, this.props.ear, this.rightEarPosition)
+    const headStyle = this.calcPosition(ratioX, ratioY, this.props.head, this.headPosition)
+    const leftEyeStyle = this.calcPosition(ratioX, ratioY, this.props.eye, this.leftEyePosition)
+    const rightEyeStyle = this.calcPosition(ratioX, ratioY, this.props.eye, this.rightEyePosition)
+    const noseMouthBaseStyle = this.calcPosition(ratioX, ratioY, this.props.noseMouthBase, this.noseMouthBasePosition)
+    const noseStyle = this.calcPosition(ratioX, ratioY, this.props.nose, this.nosePosition)
+    const mouthStyle = this.calcPosition(ratioX, ratioY, this.props.mouth, this.mouthPosition)
     return (
-      <div className={`${styles.base}`} style={{ width: this.props.width, height: this.props.width }}>
+      <div className={`${styles.base}`} style={{ width: this.props.width, height: this.props.width }} {...this.props}>
         <img style={leftEarStyle} {...this.props.ear} />
         <img style={rightEarStyle} {...this.props.ear} />
         <img style={headStyle} {...this.props.head} />

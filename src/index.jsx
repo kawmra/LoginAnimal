@@ -4,6 +4,15 @@ import Face from './component/Face'
 import Parts from './Parts'
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      ratioX: 0.5,
+      ratioY: 0.5,
+    }
+  }
+
   render() {
     const ear = new Parts('./res/ear.png', 90, 90)
     const head = new Parts('./res/head.png', 270, 270)
@@ -13,16 +22,26 @@ class App extends React.Component {
     const mouth = new Parts('./res/mouth.png', 58, 45)
 
     return (
-      <div>
+      <div style={{ width: 500, height: 500, position: 'relative' }} onMouseMove={(event) => {
+        const ratioX = event.clientX / 300.0
+        const ratioY = event.clientY / 300.0
+        console.log(ratioY)
+        this.setState({
+          ratioX: ratioX,
+          ratioY: ratioY,
+        })
+      }}>
         <Face
-        width="300"
-        height="300"
-        ear={ear}
-        head={head}
-        eye={eye}
-        noseMouthBase={noseMouthBase}
-        nose={nose}
-        mouth={mouth} />
+          width="300"
+          height="300"
+          ear={ear}
+          head={head}
+          eye={eye}
+          noseMouthBase={noseMouthBase}
+          nose={nose}
+          mouth={mouth}
+          ratioX={this.state.ratioX}
+          ratioY={this.state.ratioY} />
       </div>
     )
   }
