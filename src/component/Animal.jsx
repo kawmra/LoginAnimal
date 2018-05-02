@@ -22,14 +22,14 @@ export default class Animal extends React.Component {
 
   constructor(props) {
     super(props)
-    this.leftEarPosition = new PartsPosition(0.16, 0.16, 0.14, 0.14)
-    this.rightEarPosition = new PartsPosition(0.86, 0.16, 0.84, 0.14)
-    this.headPosition = new PartsPosition(0.49, 0.49, 0.51, 0.51)
-    this.leftEyePosition = new PartsPosition(0.2, 0.4, 0.4, 0.6)
-    this.rightEyePosition = new PartsPosition(0.6, 0.4, 0.8, 0.6)
-    this.noseMouthBasePosition = new PartsPosition(0.4, 0.6, 0.6, 0.8)
-    this.nosePosition = new PartsPosition(0.375, 0.475, 0.625, 0.725)
-    this.mouthPosition = new PartsPosition(0.375, 0.625, 0.625, 0.875)
+    this.leftEarPosition = new PartsPosition(0.16, 0.18, 0.14, 0.14)
+    this.rightEarPosition = new PartsPosition(0.86, 0.18, 0.84, 0.14)
+    this.headPosition = new PartsPosition(0.49, 0.48, 0.51, 0.51)
+    this.leftEyePosition = new PartsPosition(0.2, 0.3, 0.4, 0.6)
+    this.rightEyePosition = new PartsPosition(0.6, 0.3, 0.8, 0.6)
+    this.noseMouthBasePosition = new PartsPosition(0.4, 0.5, 0.6, 0.8)
+    this.nosePosition = new PartsPosition(0.375, 0.4, 0.625, 0.725)
+    this.mouthPosition = new PartsPosition(0.375, 0.55, 0.625, 0.875)
   }
 
   /**

@@ -13,11 +13,22 @@ class App extends React.Component {
     }
   }
 
+  componentWillMount() {
+    window.addEventListener('mousemove', (event) => {
+      const ratioX = event.pageX / window.innerWidth
+      const ratioY = event.pageY / window.innerHeight
+      this.setState({
+        ratioX: ratioX,
+        ratioY: ratioY,
+      })
+    })
+  }
+
   handleOnChange(e) {
     console.log(e.target.value.length)
     this.setState({
       ratioX: e.target.value.length / 50.0,
-      ratioY: 0.9
+      ratioY: 0.8
     })
   }
 
@@ -41,14 +52,7 @@ class App extends React.Component {
     const mouth = new Parts('./res/mouth.png', 58, 45)
 
     return (
-      <div onMouseMove={(event) => {
-        // const ratioX = event.clientX / 300.0
-        const ratioY = event.clientY / 300.0
-        this.setState({
-          // ratioX: ratioX,
-          ratioY: ratioY,
-        })
-      }}>
+      <div>
         <Animal
           width="300"
           height="300"
