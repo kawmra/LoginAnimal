@@ -17,10 +17,21 @@ class App extends React.Component {
     window.addEventListener('mousemove', (event) => {
       const ratioX = event.pageX / window.innerWidth
       const ratioY = event.pageY / window.innerHeight
-      this.setState({
-        ratioX: ratioX,
-        ratioY: ratioY,
-      })
+      this.updateRatios(ratioX, ratioY)
+    })
+    window.addEventListener('touchmove', (event) => {
+      const touch = event.touches[0]
+      const ratioX = touch.pageX / window.innerWidth
+      const ratioY = touch.pageY / window.innerHeight
+      console.log(`touch: [${touch.pageX}, ${touch.pageY}]`)
+      this.updateRatios(ratioX, ratioY)
+    })
+  }
+
+  updateRatios(x, y) {
+    this.setState({
+      ratioX: x,
+      ratioY: y,
     })
   }
 
