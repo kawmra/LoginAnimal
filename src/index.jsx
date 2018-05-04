@@ -1,45 +1,51 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Animal from './component/Animal'
-import Parts from './Parts'
+import FacePart from './component/core/FacePart'
+import Eye from './component/Eye'
+import Ear from './component/Ear'
+import Head from './component/Head'
+import Muzzle from './component/Muzzle'
+import Nose from './component/Nose'
+import Mouth from './component/Mouth'
 
 class App extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      ratioX: 0.5,
-      ratioY: 0.5,
+      directionX: 0.5,
+      directionY: 0.5,
     }
   }
 
   componentWillMount() {
     window.addEventListener('mousemove', (event) => {
-      const ratioX = event.pageX / window.innerWidth
-      const ratioY = event.pageY / window.innerHeight
-      this.updateRatios(ratioX, ratioY)
+      const directionX = event.pageX / window.innerWidth
+      const directionY = event.pageY / window.innerHeight
+      this.updateDirections(directionX, directionY)
     })
     window.addEventListener('touchmove', (event) => {
       const touch = event.touches[0]
-      const ratioX = touch.pageX / window.innerWidth
-      const ratioY = touch.pageY / window.innerHeight
+      const directionX = touch.pageX / window.innerWidth
+      const directionY = touch.pageY / window.innerHeight
       console.log(`touch: [${touch.pageX}, ${touch.pageY}]`)
-      this.updateRatios(ratioX, ratioY)
+      this.updateDirections(directionX, directionY)
     })
   }
 
-  updateRatios(x, y) {
+  updateDirections(x, y) {
     this.setState({
-      ratioX: x,
-      ratioY: y,
+      directionX: x,
+      directionY: y,
     })
   }
 
   handleOnChange(e) {
     console.log(e.target.value.length)
     this.setState({
-      ratioX: e.target.value.length / 50.0,
-      ratioY: 0.8
+      directionX: e.target.value.length / 50.0,
+      directionY: 0.8
     })
   }
 
@@ -49,32 +55,66 @@ class App extends React.Component {
 
   handleOnBlur(e) {
     this.setState({
-      ratioX: 0.5,
-      ratioY: 0.5,
+      directionX: 0.5,
+      directionY: 0.5,
     })
   }
 
   render() {
-    const ear = new Parts('./res/ear.png', 90, 90)
-    const head = new Parts('./res/head.png', 270, 270)
-    const eye = new Parts('./res/eye.png', 22, 22)
-    const noseMouthBase = new Parts('./res/nose_mouth_base.png', 153, 120)
-    const nose = new Parts('./res/nose.png', 26, 20)
-    const mouth = new Parts('./res/mouth.png', 58, 45)
 
     return (
-      <div>
+      <div style={{ backgroundColor: 'orange', padding: 32 }}>
+
         <Animal
-          width="300"
-          height="300"
-          ear={ear}
-          head={head}
-          eye={eye}
-          noseMouthBase={noseMouthBase}
-          nose={nose}
-          mouth={mouth}
-          ratioX={this.state.ratioX}
-          ratioY={this.state.ratioY} />
+          width={300}
+          height={300}
+          directionX={this.state.directionX}
+          directionY={this.state.directionY}>
+
+          <Ear
+            width={89}
+            height={89}
+            type='right'
+            src='res/ear.png' />
+
+          <Ear
+            width={89}
+            height={89}
+            type='left'
+            src='res/ear.png' />
+
+          <Head
+            width={270}
+            height={270}
+            src='res/head.png' />
+
+          <Eye
+            width={22}
+            height={22}
+            type='right'
+            src='res/eye.png' />
+
+          <Eye
+            width={22}
+            height={22}
+            type='left'
+            src='res/eye.png' />
+
+          <Muzzle
+            width={153}
+            height={120}
+            src='res/nose_mouth_base.png' />
+
+          <Nose
+            width={26}
+            height={20}
+            src='res/nose.png' />
+
+          <Mouth
+            width={58}
+            height={45}
+            src='res/mouth.png' />
+        </Animal>
 
         <input type="text"
           style={{ width: 300, marginTop: 10 }}
