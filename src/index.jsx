@@ -11,6 +11,7 @@ import Mouth from './component/Mouth'
 import rightArm from '../res/arm_right.png'
 import leftArm from '../res/arm_left.png'
 import body from '../res/body.png'
+import styles from './css/index.css'
 
 class App extends React.Component {
 
@@ -48,7 +49,7 @@ class App extends React.Component {
   handleOnChange(e) {
     console.log(e.target.value.length)
     this.setState({
-      directionX: e.target.value.length / 50.0,
+      directionX: e.target.value.length / 25.0,
       directionY: 0.8
     })
   }
@@ -67,7 +68,7 @@ class App extends React.Component {
 
   handleOnPasswordChange(e) {
     console.log(e.target.value)
-    if (e.target.value.length > 30) {
+    if (e.target.value.length > 20) {
       this.setState({
         directionX: 0.9,
         directionY: 0.9,
@@ -98,9 +99,10 @@ class App extends React.Component {
     const armTransformStyle = this.state.blinkfold ? 'unset' : 'translate(0, 150px)'
 
     return (
-      <div style={{ backgroundColor: 'orange', padding: 32 }}>
+      <div className={styles.container}>
 
-        <div style={{ width: 150, height: 150, clipPath: 'circle()', padding: 32, backgroundColor: 'yellow', position: 'relative' }}>
+        <div className={styles.room}>
+
           <Animal
             width={150}
             height={150}
@@ -173,6 +175,7 @@ class App extends React.Component {
 
         <p>
           <input type="text"
+            className={styles.field}
             style={{ width: '100%', marginTop: 10 }}
             onChange={this.handleOnChange.bind(this)}
             onFocus={this.handleOnFocus.bind(this)}
@@ -181,6 +184,7 @@ class App extends React.Component {
 
         <p>
           <input type="password"
+            className={styles.field}
             style={{ width: '100%', marginTop: 10 }}
             onChange={this.handleOnPasswordChange.bind(this)}
             onFocus={this.handleOnPasswordFocus.bind(this)}

@@ -1,0 +1,20 @@
+.container {
+    padding: 32px;
+    background-color: #A1887F;
+}
+
+.room {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    padding: 32px;
+    margin: auto;
+    background-color: #D7CCC8;
+    clip-path: circle();
+    overflow: hidden;
+}
+
+.field {
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
+}
