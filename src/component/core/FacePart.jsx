@@ -18,7 +18,7 @@ class FacePart extends React.Component {
     const { width, height } = this.props
     const { minX, minY, maxX, maxY } = this.props.position
     const ratioX = minX + (maxX - minX) * directionX
-    const ratioY = minY + (maxY - minY) * directionY
+    const ratioY = minY + 0.1 + (maxY - minY) * directionY
     console.log(`ratio: [${ratioX}, ${ratioY}]`)
     return {
       top: `${ratioY * 100}%`,

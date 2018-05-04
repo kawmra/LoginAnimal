@@ -1,5 +1,5 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
 import Animal from './component/Animal'
 import FacePart from './component/core/FacePart'
 import Eye from './component/Eye'
@@ -8,6 +8,9 @@ import Head from './component/Head'
 import Muzzle from './component/Muzzle'
 import Nose from './component/Nose'
 import Mouth from './component/Mouth'
+import rightArm from '../res/arm_right.png'
+import leftArm from '../res/arm_left.png'
+import body from '../res/body.png'
 
 class App extends React.Component {
 
@@ -16,6 +19,7 @@ class App extends React.Component {
     this.state = {
       directionX: 0.5,
       directionY: 0.5,
+      blinkfold: false,
     }
   }
 
@@ -57,70 +61,131 @@ class App extends React.Component {
     this.setState({
       directionX: 0.5,
       directionY: 0.5,
+      blinkfold: false,
+    })
+  }
+
+  handleOnPasswordChange(e) {
+    console.log(e.target.value)
+    if (e.target.value.length > 30) {
+      this.setState({
+        directionX: 0.9,
+        directionY: 0.9,
+      })
+    } else {
+      this.setState({
+        directionX: 0.5,
+        directionY: 0.5,
+      })
+    }
+  }
+
+  handleOnPasswordFocus(e) {
+    this.setState({
+      directionX: 0.5,
+      directionY: 0.5,
+      blinkfold: true,
+    })
+  }
+
+  handleOnPasswordBlur(e) {
+    this.setState({
+      blinkfold: false,
     })
   }
 
   render() {
+    const armTransformStyle = this.state.blinkfold ? 'unset' : 'translate(0, 150px)'
 
     return (
       <div style={{ backgroundColor: 'orange', padding: 32 }}>
 
-        <Animal
-          width={300}
-          height={300}
-          directionX={this.state.directionX}
-          directionY={this.state.directionY}>
+        <div style={{ width: 150, height: 150, clipPath: 'circle()', padding: 32, backgroundColor: 'yellow', position: 'relative' }}>
+          <Animal
+            width={150}
+            height={150}
+            directionX={this.state.directionX}
+            directionY={this.state.directionY}>
 
-          <Ear
-            width={89}
-            height={89}
-            type='right'
-            src='res/ear.png' />
+            <FacePart
+              width={165}
+              height={180}
+              position={{ minX: 0.5, minY: 1.3, maxX: 0.5, maxY: 1.3 }}
+              src={body} />
 
-          <Ear
-            width={89}
-            height={89}
-            type='left'
-            src='res/ear.png' />
+            <Ear
+              width={44.5}
+              height={44.5}
+              type='right'
+              src='res/ear.png' />
 
-          <Head
-            width={270}
-            height={270}
-            src='res/head.png' />
+            <Ear
+              width={44.5}
+              height={44.5}
+              type='left'
+              src='res/ear.png' />
 
-          <Eye
-            width={22}
-            height={22}
-            type='right'
-            src='res/eye.png' />
+            <Head
+              width={135}
+              height={135}
+              src='res/head.png' />
 
-          <Eye
-            width={22}
-            height={22}
-            type='left'
-            src='res/eye.png' />
+            <Eye
+              width={11}
+              height={11}
+              type='right'
+              src='res/eye.png' />
 
-          <Muzzle
-            width={153}
-            height={120}
-            src='res/nose_mouth_base.png' />
+            <Eye
+              width={11}
+              height={11}
+              type='left'
+              src='res/eye.png' />
 
-          <Nose
-            width={26}
-            height={20}
-            src='res/nose.png' />
+            <Muzzle
+              width={76.5}
+              height={60}
+              src='res/nose_mouth_base.png' />
 
-          <Mouth
-            width={58}
-            height={45}
-            src='res/mouth.png' />
-        </Animal>
+            <Nose
+              width={13}
+              height={10}
+              src='res/nose.png' />
 
-        <input type="text"
-          style={{ width: 300, marginTop: 10 }}
-          onChange={this.handleOnChange.bind(this)}
-          onFocus={this.handleOnFocus.bind(this)}
-          onBlur={this.handleOnBlur.bind(this)} />
+            <Mouth
+              width={29}
+              height={22.5}
+              src='res/mouth.png' />
+          </Animal>
+
+          <img
+            width={70.5}
+            height={123}
+            style={{ position: 'absolute', top: 95, left: 20, transition: '100ms', transform: armTransformStyle }}
+            src={rightArm} />
+
+          <img
+            width={70.5}
+            height={123}
+            style={{ position: 'absolute', top: 95, right: 20, transition: '100ms', transform: armTransformStyle }}
+            src={leftArm} />
+        </div>
+
+        <p>
+          <input type="text"
+            style={{ width: '100%', marginTop: 10 }}
+            onChange={this.handleOnChange.bind(this)}
+            onFocus={this.handleOnFocus.bind(this)}
+            onBlur={this.handleOnBlur.bind(this)} />
+        </p>
+
+        <p>
+          <input type="password"
+            style={{ width: '100%', marginTop: 10 }}
+            onChange={this.handleOnPasswordChange.bind(this)}
+            onFocus={this.handleOnPasswordFocus.bind(this)}
+            onBlur={this.handleOnPasswordBlur.bind(this)} />
+        </p>
       </div>
     )
   }
