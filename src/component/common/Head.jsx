@@ -1,5 +1,5 @@
 import React from 'react'
-import FacePart from './core/FacePart'
+import FacePart from '../core/FacePart'
 
 export default class Head extends React.Component {
 

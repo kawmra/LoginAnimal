@@ -1,15 +1,15 @@
 import React from 'react'
-import FacePart from './core/FacePart'
+import FacePart from '../core/FacePart'
 
-export default class Eye extends React.Component {
+export default class Ear extends React.Component {
 
     render() {
         const { type } = this.props
         let position
         if (type === 'right') {
-            position = { minX: 0.2, minY: 0.3, maxX: 0.4, maxY: 0.6 }
+            position = { minX: 0.86, minY: 0.18, maxX: 0.84, maxY: 0.14 }
         } else if (type === 'left') {
-            position = { minX: 0.6, minY: 0.3, maxX: 0.8, maxY: 0.6 }
+            position = { minX: 0.16, minY: 0.18, maxX: 0.14, maxY: 0.14 }
         } else {
             throw new Error("The 'type' attribute is undefined.")
         }
