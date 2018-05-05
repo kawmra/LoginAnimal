@@ -38,7 +38,6 @@ class App extends React.Component {
   }
 
   handleOnChange(e) {
-    console.log(e.target.value.length)
     this.setState({
       directionX: e.target.value.length / 25.0,
       directionY: 0.8
@@ -58,7 +57,6 @@ class App extends React.Component {
   }
 
   handleOnPasswordChange(e) {
-    console.log(e.target.value)
     if (e.target.value.length > 20) {
       this.setState({
         directionX: 0.9,
