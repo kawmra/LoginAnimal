@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "./build.sh",
     "deploy": "yarn run build && ./deploy.sh"
   },
   "keywords": [],

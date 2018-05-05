@@ -1,4 +1,3 @@
 rm -rf dist
-yarn run build
+webpack --config webpack.prod.js
 cp index.html dist
-cp -r res dist
