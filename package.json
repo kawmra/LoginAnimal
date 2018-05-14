@@ -1,5 +1,5 @@
 {
-  "name": "react-base",
+  "name": "login-animal",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "deploy": "yarn run build && ./deploy.sh"
   },
   "keywords": [],
-  "author": "",
+  "author": "kawmra (https://github.com/kawmra/)",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
